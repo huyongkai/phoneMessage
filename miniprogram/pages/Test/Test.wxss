@@ -1,0 +1,11 @@
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+
+page{
+  padding-bottom: 100rpx;
+}
+
+.img{
+  width: 30px;
+  height: 30px;
+}

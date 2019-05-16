@@ -1,0 +1,496 @@
+<view class="cu-bar bg-white margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-pink"></text>手机展示
+  </view>
+</view>
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{swiperList}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<view class="cont">
+
+  <view class="title">{{phoneDetail.phoneType}}</view>
+  <view class="gmxx">
+    <view>
+          <span class="jiage">¥:{{phoneDetail.phonePrice}}</span> 
+    </view>
+    <view class="font_14 c6">品牌：{{phoneDetail.phoneBrand}}</view>
+  </view>
+
+</view>
+
+
+
+
+<!--图文详情头部-->
+<view>
+  <view class="swiper-tab">
+      <view class="bre swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">
+         图文详情
+      </view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">
+         产品参数
+      </view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" 
+          style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+    <swiper-item>
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>CPU性能超越{{phoneDetail.cpuProportion}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.cpuProportion}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.cpuProportion}}%</text>
+          </view>
+
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>屏幕尺寸超越{{phoneDetail.screenSizeProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.screenSizeProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.screenSizeProption}}%</text>
+          </view>
+         
+
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>屏幕类型(如水滴屏)超越{{phoneDetail.screenProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.screenProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.screenProption}}%</text>
+          </view>
+
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>解锁方式超越{{phoneDetail.unlockProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.unlockProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.unlockProption}}%</text>
+          </view>
+
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>前置摄像{{phoneDetail.prePhotoProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.prePhotoProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.prePhotoProption}}%</text>
+          </view>
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>后置摄像{{phoneDetail.postPhotoProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.postPhotoProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.postPhotoProption}}%</text>
+          </view>
+
+
+
+           <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>运行内存在{{phoneDetail.phoneMemoryProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.phoneMemoryProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.phoneMemoryProption}}%</text>
+          </view>
+
+
+          <view class="cu-bar bg-white margin-top">
+               <view class="action">
+                    <text class="cuIcon-title text-pink"></text>手机存储在{{phoneDetail.phoneRunningMemoryProption}}%上人数
+               </view>
+          </view>
+          <view class="flex margin-top">
+               <view class="cu-progress round">
+                   <view class="bg-green" style="width:{{phoneDetail.phoneRunningMemoryProption}}%;"></view>
+               </view>
+               <text class="margin-left">{{phoneDetail.phoneRunningMemoryProption}}%</text>
+          </view>
+
+
+           <view class="cu-bar bg-white margin-top">
+              <view class="action">
+                  <text class="cuIcon-title text-orange ">手机部分功能权重增加</text>
+              </view>
+              <view class="action">
+                  <button class="cu-btn bg-green shadow" bindtap="toShowResult">
+                     显示分数
+                  </button>
+              </view>
+          </view>
+          <view class="grid col-3 bg-white padding-sm">
+                <view class="padding-sm" wx:for="{{PhoneList}}" wx:key wx:if="{{index<6}}">
+                       <view class="bg-{{item.name}} padding radius text-center light"
+                             id='{{index}}' bindtap='showModal' data-target="RadioModal">
+                              <view class="text-lg">{{item.title}}</view>
+                              <view class="margin-top-sm text-Abc">{{item.name}}</view>
+                        </view>
+                 </view>
+           </view>
+
+           <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+                <view class="cu-dialog" catchtap>
+                        <radio-group class="block">
+                                 <view class="cu-list menu text-left">
+                                      <view class="cu-item" wx:for="{{checkbox}}" wx:key>
+                                       
+                                           <label class="flex justify-between align-center flex-sub" bindtap='chooseRadio'
+                                                  id='{{index}}'>
+                                                 <view class="flex-sub">{{item.name}}</view>
+                                                 <radio class="round"></radio>
+                                           </label>
+                                        
+                                      </view>
+                                 </view>
+                        </radio-group>
+                 </view>
+          </view>
+
+    </swiper-item>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <swiper-item>
+
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-orange "></text> 菜单列表
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="menuModal">设置</button>
+    </view>
+  </view>
+
+  <view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+   <view class="cu-modal {{modalName=='menuModal'?'show':''}}" bindtap="hideModal">
+     <view class="cu-dialog" catchtap>
+      <scroll-view scroll-y style="height:300rpx">
+        <view class="cu-list menu text-left solid-top">
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">短边框</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuBorder"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">箭头</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuArrow"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">卡片</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuCard"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">短边框</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuBorder"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">箭头</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuArrow"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">卡片</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuCard"></switch>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+     </view>
+   </view>
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.phoneType}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">商品名称</view>
+      </view>
+    </view>
+
+
+
+  <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+          <text class="cuIcon-tagfill text-red"></text>
+          <text class="text-grey">{{phoneDetail.itemCPUModel}}</text>
+      </view>
+      <view class="action">
+            <view class="cu-tag round bg-orange light">CPU类型</view>
+      </view>
+  </view>
+
+
+
+
+
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.itemMainscreensize}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">主屏尺寸</view>
+      </view>
+   </view>
+
+
+
+   
+  
+
+
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.itemMobilePhoneUnlock}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">解锁方式</view>
+      </view>
+  </view>
+
+
+
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.itemScreentype}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">屏幕类型</view>
+      </view>
+   </view>
+ 
+
+
+  
+  
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.phoneBatteryCapacity}}mAh</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">电池容量</view>
+      </view>
+  </view>
+
+
+
+
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.phoneFrontpixel}}万像素</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">前置摄像</view>
+      </view>
+   </view>
+  
+
+
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.phonePostpixel}}万像素</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">后置摄像</view>
+      </view>
+   </view>
+
+
+
+  <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.phoneMemory}}/{{phoneDetail.phoneRunningMemory}}/{{phoneDetail.phoneOperator}}</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">运行参数</view>
+      </view>
+  </view>
+
+
+
+   <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-tagfill text-red"></text>
+        <text class="text-grey">{{phoneDetail.phonePrice}}￥</text>
+      </view>
+      <view class="action">
+        <view class="cu-tag round bg-orange light">售价</view>
+      </view>
+    </view>
+</view>
+
+
+<view class="cu-bar bg-white margin-top">
+        <view class="action">
+            <text class="cuIcon-title text-pink">手机评比规则</text>
+        </view>
+</view>
+<view>
+    
+      <view class="padding">1.所有评比只限于个人意见</view>
+
+  
+      <view class="padding">2.基于本人对手机知识有限,所以手机的各个部分权重相同</view>
+ 
+  
+      <view class="padding">3.可以在图文详情页面调整比重</view>
+
+      <view class="padding">4.性价比=比分/价格</view>
+   
+</view>
+</scroll-view>
+
+
+
+<view class="cu-bar bg-white margin-top">
+        <view class="action">
+            <text class="cuIcon-title text-pink">手机最终评分为---{{sum}}分</text>
+        </view>
+</view>
+<view class="cu-bar bg-white margin-top">
+        <view class="action">
+            <text class="cuIcon-title text-pink">手机的价格为---{{phoneDetail.phonePrice}}元</text>
+        </view>
+</view>
+<view class="cu-bar bg-white margin-top">
+        <view class="action">
+            <text class="cuIcon-title text-pink">则手机推荐的性价比为：</text>
+        </view>
+</view>
+
+
+<view class="cu-bar bg-white margin-top">
+      <view class="action">
+          手机性能超越___<text class="text-green">{{itemPriceProgress}}%</text>___上人数
+      </view>
+</view>
+<view class="padding bg-white">
+  <view class="cu-progress round sm striped {{active?'active':''}}">
+    <view class="bg-green" style="width:{{itemPriceProgress}}%;"></view>
+  </view>
+</view>
+
+<view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xxl padding">
+        <text class="text-red">{{itemPrice}}</text>
+      </view>
+      <view class="padding">(该评测只提供参考)</view>
+    </view>
+  </view>
+
+
+       </swiper-item> 
+</swiper>
+
+
+
+
+
+
+
+
+<view class="padding-sm" bindtap='PK'>
+    <view class="bg-gradual-green padding radius text-center shadow-blur">
+      <view class="text-lg">点击</view>
+      <view class="margin-top-sm text-Abc">进行手机PK</view>
+    </view>
+  </view>
+</view>
+
+

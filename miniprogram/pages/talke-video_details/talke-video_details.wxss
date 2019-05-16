@@ -1,0 +1,49 @@
+video{
+  margin-left: 10px;
+}
+.btn-area input{
+  border: 1px solid green;
+  margin: 10px;
+  border-radius: 10px 10px 10px 10px;
+  padding-left: 10px;
+}
+.btn-area button{
+  border-radius: 20px 20px 20px 20px;
+}
+
+
+
+
+
+
+.selction{
+  margin-top: 20px;
+}
+
+.aboutVideo{
+font-size: 24px;
+color: rgb(255, 174, 0);
+margin: 10px;
+}
+
+
+
+.list-item{
+margin-bottom: 10px;
+}
+.list-item-text{
+   margin-top: 20rpx;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.list-item-text-title{
+  font-size: 24px;
+  color: rgb(241, 75, 75);
+}
+.list-item-text-content{
+  font-size: 16px;
+  text-indent:2em; 
+}
+
+
+

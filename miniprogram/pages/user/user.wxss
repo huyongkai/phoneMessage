@@ -1,0 +1,58 @@
+.conBox{
+   background: #F0F0F0 ;
+   height: 500px;
+}
+
+.userBackgroundImage{
+width: 100%;
+height: 150px;
+}
+.userBackgroundImage image{
+  width: 100%;
+  height: 100%;
+}
+
+
+.user{
+  position: relative;
+  margin-top: -40px;
+  margin-bottom: 20px;
+}
+.userLogo{
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+}
+.userLogo image{
+  width: 100%;
+  height: 100%;
+}
+.userAutor{
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 110px;
+  font-size: 20px;
+}
+
+
+
+.my{
+  width: 100%;
+  height: 50px;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.my image{
+  width: 20px;
+  height: 20px;
+  margin: 15px 25px 15px 25px;
+}
+.my text{
+  position: absolute;
+  font-size: 14px;
+  margin: 15px ;
+}

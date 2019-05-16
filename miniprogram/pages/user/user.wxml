@@ -1,0 +1,44 @@
+<view class='conBox'>
+
+<view class='userBackgroundImage' bindtap="chosseBackgroundImage">
+    <image src='{{userBackgroundUrl}}'>更换背景图片</image>
+</view>
+
+<view class='user'>
+     <view class='userLogo'  bindtap="chosseUserPhoto">
+        <image src='{{userLogo}}'>选择头像</image>
+     </view>
+     <view class='userAutor'>
+        <text>{{username}}</text>
+     </view>
+</view>
+
+
+
+<view class='my'>
+   <navigator url='/pages/user-watch-people/user-watch-people?username={{username}}'>
+       <image src='/images/mycoucs.png'></image>
+       <text>我的关注</text>
+    </navigator>
+</view>
+
+<view class='my'>
+   <navigator url='/pages/user-artical/user-artical?username={{username}}'>
+    <image src='/images/myartical.png'></image>
+    <text>我的文章发表</text>
+    </navigator>
+</view>
+<view class='my'>
+   <navigator url='/pages/user-video/user-video?username={{username}}'>
+    <image src='/images/myvideo.png'></image>
+    <text>我的视频上传</text>
+    </navigator>
+</view>
+<view class='my'>
+    <navigator url='/pages/user-people/user-people?username={{username}}'>
+    <image src='/images/callPeolpe.png'></image>
+    <text>联系人推荐</text>
+    </navigator>
+</view>
+
+</view>

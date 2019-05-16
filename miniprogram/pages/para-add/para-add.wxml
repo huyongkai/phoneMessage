@@ -1,0 +1,133 @@
+  <view class='comment'>
+
+    <view class='comment-uploader'>
+        <view class='comment-uploader-add'>
+                  <text class='comment-uploader-add-icon' bindtap='PhoneImage'>+</text>
+              <text class='comment-uploader-add-des'>点击上传手机封面</text>
+        </view>
+    </view>
+   
+  
+
+
+
+
+
+
+
+     <view class='box'>
+    <view class='PhoneTitle'>手机品牌</view>
+    <picker  mode="multiSelector"  bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" 
+             value="{{multiIndex}}"  range="{{multiArray}}">
+         <view class="picker">
+            品牌：{{multiArray[0][multiIndex[0]]}}  类型：{{multiArray[1][multiIndex[1]]}}
+         </view>
+    </picker>
+    </view>
+   
+
+
+
+
+
+
+
+
+
+
+
+    <view class='box'>
+    <view class='PhoneTitle'>手机主屏尺寸</view>
+    <picker bindchange="bindPickerChangeMainscreensize" value="{{indexMainscreensize}}" range="{{Mainscreensize}}">
+        <view class="picker">
+             当前选择：{{Mainscreensize[indexMainscreensize]}}
+         </view>
+    </picker>
+    </view>
+    <view class='box'>
+    <view class='PhoneTitle'>手机屏幕类型</view>
+    <picker bindchange="bindPickerChangeScreentype" value="{{indexScreentype}}" range="{{Screentype}}">
+        <view class="picker">
+             当前选择：{{Screentype[indexScreentype]}}
+        </view>
+    </picker>
+    </view>
+
+    <view class='box'>
+    <view class='PhoneTitle'>手机CPU型号</view>
+    <picker bindchange="bindPickerChangeCPUModel" value="{{indexCPUModel}}" range="{{CPUModel}}">
+        <view class="picker">
+             当前选择：{{CPUModel[indexCPUModel]}}
+        </view>
+    </picker>
+    </view>
+   
+
+    <view class='box'>
+    <view class='PhoneTitle'>手机解锁方式</view>
+    <picker bindchange="bindPickerChangeMobilePhoneUnlock" value="{{indexMobilePhoneUnlock}}" range="{{MobilePhoneUnlock}}">
+        <view class="picker">
+             当前选择：{{MobilePhoneUnlock[indexMobilePhoneUnlock]}}
+         </view>
+    </picker>
+    </view>
+
+
+    
+  
+
+
+
+
+
+
+
+   <view class='box'>
+    <view>运行参数</view>
+    <picker  mode="multiSelector"  bindchange="bindMultiPickerChangePhone" 
+             value="{{phoneIndex}}"  range="{{phoneArray}}">
+         <view class="picker">
+            当前选择：{{phoneArray[0][phoneIndex[0]]}}/{{phoneArray[1][phoneIndex[1]]}}/{{phoneArray[2][phoneIndex[2]]}}
+         </view>
+    </picker>
+    </view>
+
+
+
+
+
+ <view class='box'>
+    <view class='PhoneTitle'>请输入手机价格</view>
+    <view class='title'>
+       <input bindinput='inputphonePrice' value='{{phonePrice}}'></input>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='PhoneTitle'>请输入手机电池容量</view>
+    <view class='title'>
+       <input  bindinput='inputphoneBatteryCapacity' value='{{phoneBatteryCapacity}}'></input>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='PhoneTitle'>请输入前置像素</view>
+    <view class='title'>
+       <input  bindinput='inputphoneFrontpixel' value='{{phoneFrontpixel}}'></input>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='PhoneTitle'>请输入后置像素</view>
+    <view class='title'>
+       <input  bindinput='inputphonePostpixel' value='{{phonePostpixel}}'></input>
+    </view>
+</view>
+
+
+
+
+    <button class='comment-save' bindtap='savePhone'>保存</button>
+
+
+</view>

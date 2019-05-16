@@ -1,0 +1,50 @@
+<view>
+ 
+  <video  src="{{videoItem.videoPath}}" id="myVideo"  danmu-list="{{danmuList}}"  enable-danmu  danmu-btn controls      bindtimeupdate='currentTime'>
+  </video>
+
+  <view class="btn-area">
+    <input bindblur="bindInputBlur" value='{{inputValue}}' />
+    <button bindtap="bindSendDanmu" type='primary'>发送弹幕</button>
+  </view>
+  <view class="mod_action"> 
+     <button bindtap="bindButtonRate" data-rate='0.5'>倍速0.5</button>
+     <button bindtap="bindButtonRate" data-rate='1'>倍速1</button> 
+     <button bindtap="bindButtonRate" data-rate='1.5'>倍速1.5</button> 
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+<view class='selction'>
+     <view class='aboutVideo'>
+        相关推荐视频：
+     </view>
+
+      <view class='list-item' wx:for='{{aboutVideoItem}}'>
+         <view>
+              <video src='{{item.videoPath}}'></video>
+              <navigator  url="/pages/talke-video_details/talke-video_details?videoID={{item._id}}">
+                 <view class='list-item-text'>
+                       <view class='list-item-text-title'>
+                                 <text>{{item.videoTitle}}</text>
+                       </view>
+                       <view class='list-item-text-content'>
+                                 <text>{{item.videoContent}}</text>
+                       </view>
+                   </view>
+              </navigator>
+         </view>
+      </view>
+</view>
+
+
+
+
+

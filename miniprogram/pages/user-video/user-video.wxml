@@ -1,0 +1,39 @@
+ <view class='selction'>
+
+      <view class='list-item' wx:for='{{showListVideo}}'>
+       
+         <view class='list-item-videos'>
+            <video src="{{item.videoPath}}" enable-danmu danmu-btn controls></video>
+         </view>
+
+
+         <navigator  url="/pages/talke-video_details/talke-video_details?videoID={{item._id}}">
+         <view class='list-item-text'>
+             <view class='list-item-text-title'>
+                 <text>{{item.videoTitle}}</text>
+             </view>
+             <view class='list-item-text-content'>
+                  <text>{{item.videoContent}}</text>
+             </view>
+         </view>
+         </navigator>
+
+
+      </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<view class='addVideo'>
+    <navigator url='/pages/user-video-add/user-video-add'>
+       <image src='/images/add.png'></image>
+    </navigator>
+</view>

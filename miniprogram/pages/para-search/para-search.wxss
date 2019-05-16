@@ -1,0 +1,19 @@
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+.box {  
+  margin: 20rpx 0; 
+}
+
+.box view.cu-bar {
+  margin-top: 20rpx; 
+}
+.im{
+ width: 40px;
+ height: 40px;
+ border-radius: 50% 50% 50% 50%;
+}
+.price{
+  font-size: 20px;
+  color: red;
+  margin: 10px;
+}

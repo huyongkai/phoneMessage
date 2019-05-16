@@ -1,0 +1,192 @@
+.artical-title{
+    font-size: 22px;
+    margin: 10px;
+}
+
+.author{
+  position: relative;
+}
+.artical-autor{
+   position: absolute;
+    font-size: 16px;
+    color: gold;
+    margin-left: 50px;
+}
+.articalAuthorPhoto{
+  position: absolute;
+  width:30px;
+  height: 30px;
+  margin-top: -5px;
+  margin-left: 10px;
+}
+.articalAuthorPhoto image{
+  width:30px;
+  height: 30px;
+  border-radius: 50px 50px 50px 50px;
+}
+
+
+
+
+
+.artical-content{
+  width: 90%;
+  margin: 50px auto;
+  font-size: 18px;
+  color: black;
+  text-indent:2em; 
+}
+
+
+
+
+
+
+
+
+.artical-talke-list{
+
+}
+.artical-talke-list-title{
+border-bottom: 1px solid rebeccapurple
+}
+.artical-talke-list-title text{
+  font-size: 20px;
+  color: grey;
+  margin-left: 5px
+}
+
+.artical-talke-list-item{
+  margin: 5px;
+  position: relative;
+}
+.artical-talke-list-item-photo{
+   width: 50px;
+   height: 50px;
+   margin: 5px;
+}
+.artical-talke-list-item-photo image{
+  width: 50px;
+  height: 50px;
+}
+.artical-talke-list-item-username{
+  margin: 5px;
+  width: 50px;
+}
+.artical-talke-list-item-time{
+   position: absolute;
+   margin-top: -85px;
+   margin-left: 70px;
+}
+
+.artical-talke-list-item-content{
+  margin-left: 70px;
+  margin-top: -50px;
+  width: 75%;
+  border-bottom: 1px solid gray;
+  padding: 10px 0px;
+}
+.artical-talke-list-item-content-articalReplayList{
+  border-bottom: 1px solid greenyellow;
+  position: relative;
+}
+.replayAuthor{
+color: #FF6600;
+}
+.replayContent{
+    text-indent:2em; 
+}
+.replayContentLou{
+  color: #FF6600;
+  width: 30px;
+  position: absolute;
+  display: flex;
+  flex: right;
+  right: 5px;
+  margin-top: -20px;
+}
+.replayTalke{
+  text-indent:2em; 
+}
+
+.artical-talke-list-item-function{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 5px;
+  border-bottom: 1px solid gray;
+}
+.artical-talke-list-item-function-icon{
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+.artical-talke-list-item-function-icon image{
+   width: 20px;
+   height: 20px;
+}
+.artical-talke-list-item-function-num{
+   margin: 5px 10px;
+}
+.artical-talke-list-item-function-replay{
+  margin-top: 5px;
+}
+.artical-talke-list-item-replay{
+  height:110px;
+   border: 1px solid gray;
+}
+.artical-talke-list-item-replay-atPeople{
+ color: #FF6600;
+}
+.artical-talke-list-item-replay textarea{
+   height: 60px;
+   width: 100%;
+}
+.artical-talke-list-item-replay-save{
+  background-color: #33c9ff;
+  color: #fff;
+  float: right;
+  right: 10px;
+}
+
+
+
+
+
+
+.comment{
+  width: 99%;
+  position:relative; 
+  bottom:0;
+  border-top: 1px solid gainsboro;
+}
+.comment-text{
+  flex: 1;
+  box-sizing: border-box;
+  width: 99%;
+  height: 100px;
+  padding: 50rpx;
+  position: relative;
+}
+.currentWordNumber{
+  font-size: 28rpx;
+  color: gray;
+  position: absolute;
+  float: right;
+  right: 10px;
+  top: 5rpx;
+}
+.hint{
+   font-size: 28rpx;
+   position: absolute;
+   top: 150rpx;
+   left: 50rpx;
+   color: #FF6600;
+}
+
+.comment-save{
+background-color: #33c9ff;
+color: #fff;
+float: right;
+right: 10px;
+}

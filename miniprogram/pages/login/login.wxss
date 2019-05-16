@@ -1,0 +1,154 @@
+.animationSlow {
+  /* 动画区 */
+  margin-top: -5555rpx; /* 高度的-1/2 或 者高一点 */
+  width: 10000rpx; /* 彩色背景大小 可自定义 */
+  height: 10000rpx; /* 彩色背景大小 可自定义 */
+  animation-name: myfirst;
+  animation-duration: 2000s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: myfirst;
+  -webkit-animation-duration: 8000ms; /* 速度 */
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  position: fixed;
+  z-index: 1;
+}
+
+.v {
+  background-color: rgb(255, 255, 255);
+  margin: 0px auto auto;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes myfirst {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+.mcontainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+} 
+
+.item{
+    flex-grow:1;
+    height: 30%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 96%;
+    padding: 0 2%;
+}
+
+.image{
+    width: 500rpx;
+    height: 120rpx;  
+}
+
+.login-item{
+    width: 90%;
+    margin-top: 30rpx;
+    border-bottom: 1px solid #eee;
+    flex-grow:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 20rpx;
+}
+
+ .bottom{
+     border-bottom: 0px;
+}
+
+.login-item-info{
+    font-size: 8px;
+    color: #888;
+     padding-bottom: 20rpx;
+}
+
+.login-pwd{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+  
+}
+
+.login-pwd text{
+    height: 100%;
+    font-size: 14px;
+    color: #888;
+    display: flex;
+     
+}
+
+
+.login-btn{
+    width: 80%;
+    color: white;
+    background-color: green;
+    border-radius: 0;
+    font-size: 14px;
+
+}
+
+.login-btn:hover{
+    width: 80%;
+    color: white;
+    border-radius: 0;
+
+}
+.wechat-icon{
+    margin-top: 30px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid seagreen;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.wechat-icon image{
+    width: 30px;
+    height: 30px;
+}
+
+
+.resgister text{
+  color: red;
+}

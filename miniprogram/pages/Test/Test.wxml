@@ -1,0 +1,39 @@
+<view wx:for="{{chatPeopleChat}}">
+<view class="cu-chat">
+
+     <view class="cu-item self" wx:if="{{item.sendName===chatPeople.username}}">
+        <view class="main">
+            <view class="content bg-green shadow">
+                   <text>{{item.message}}</text>    
+            </view>
+        </view>
+        <view class="cu-avatar radius">
+          <image src='{{item.sendPhoto}}' class='img'></image>
+        </view>
+         <view class="date">{{item.sendTime}}</view>
+     </view>
+     <view class="cu-item" wx:else>
+         <view class="cu-avatar radius">
+             <image src='{{item.sendPhoto}}' class='img'></image>
+         </view>
+         <view class="main">
+              <view class="content shadow">
+                    <text>{{item.message}}</text>
+              </view>
+         </view>
+         <view class="date">{{item.sendTime}}</view>
+     </view>
+</view>
+</view>
+
+
+
+
+
+
+
+
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+  <input class="solid-bottom" bindinput='add' maxlength="300" cursor-spacing="10" value='{{message}}'></input>
+  <button class="cu-btn bg-green shadow" bindtap='Chat'>发送</button>
+</view>

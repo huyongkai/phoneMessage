@@ -1,0 +1,57 @@
+
+
+
+<view class="container">  
+
+  <scroll-view class='scroll_left' scroll-y="true">
+    <view class="nav_left"> 
+      <block wx:for="{{getList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this">  
+      
+        <view class="nav_left_items {{curNav == idx ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}" id="{{idx}}">{{itemName[0].name}}</view>  
+      </block>  
+    </view>
+  </scroll-view>
+
+
+
+  <scroll-view scroll-y="true" class="scroll_right" style="height:{{winHeight}}px;" scroll-into-view="{{scrollTopId}}" scroll-with-animation="true">
+    <view class="nav_right"> 
+      <view class='mink' wx:for="{{getList}}" wx:for-index="idx" wx:for-item="itemName" wx:key="*this" bindscroll="scrollTop">
+        <view class='minl' id='{{idx}}'>{{itemName[0].name}}</view>
+          <block wx:for="{{itemName}}" wx:for-index="idex" wx:key="*this" > 
+            <view class="nav_right_items" wx:if="{{idex>0}}">  
+              <navigator url="/pages/para-detail/para-detail?phoneBrand={{item.phoneBrand}}&&phoneType={{item.phoneType}}" hover-class="other-navigator-hover">
+                <view>   
+                  <image src="{{item.phonefileID}}"></image>
+                  <view >  
+                    <text>{{item.phoneType}}</text>  
+                  </view> 
+                </view>  
+              </navigator>  
+            </view>      
+          </block> 
+        </view>
+      <view style="width:100%;height:30rpx;background:#f0f4f7"></view>       
+    </view>
+  </scroll-view>
+</view>  
+
+
+
+
+
+
+
+<view class="add {{showToolbar?'active':''}}">
+   <view class='add-item' bindtap='onAdd' data-type='0'>
+       <text class='add-item-txt'>添加</text>
+   </view>
+   <view class='add-item' bindtap='onSearch' data-type='1'>
+       <text class='add-item-txt'>查询</text>
+   </view>
+ 
+   <view class='add-icon' bindtap='onToggle'>
+       <text wx:if="{{showToolbar}}" class='add-icon-txt'>x</text>
+       <text wx:else class='add-icon-txt'>+</text>
+   </view>
+</view>

@@ -1,0 +1,59 @@
+page{
+  background-color:#E5E5E5;
+}
+
+.item{
+
+  background-color: white;
+  position: relative;
+  padding: 10px 0px 10px 0px;
+}
+.item-photo{
+width: 50px;
+height: 50px;
+
+ margin: 10px;
+}
+.item-photo image{
+  width: 50px;
+  height: 50px;
+  border-radius: 25% 25% 25% 25%;
+}
+.content{
+ position: absolute;
+ margin-left: 80px;
+ margin-top: -60px;
+}
+
+
+.user{
+  color:  	#EE7600;
+}
+.watch{
+
+ 
+    width: 70px;
+  height: 25px;
+   font-size: 10px;
+  background-color: green;
+  color: white;
+  margin-left: 150px;
+  margin-top: -20px;
+}
+.nowatch{
+
+   width: 70px;
+  height: 25px;
+   font-size: 10px;
+     background-color: grey;
+  color: white;
+    margin-left: 150px;
+  margin-top: -20px;
+}
+
+
+.blur{
+  width: 100%;
+  height: 10px;
+  background-color: #E5E5E5;
+}

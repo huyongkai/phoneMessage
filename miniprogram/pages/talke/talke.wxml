@@ -1,0 +1,93 @@
+<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+			<cu-custom bgColor="bg-gradual-blue">
+				    <view slot="content">评测展示页面</view>
+			</cu-custom>		
+
+			<view class='padding margin text-center'>
+				  <view class='cu-btn bg-green lg block shadow radius margin-xl' 
+                 bindtap="showModal" data-target="viewModal">
+					       点击跳转文章列表
+			   	</view>
+			</view>
+
+
+
+<view class='list-item' wx:for='{{videoItem}}'>
+     <view class="cu-card case {{isCard?'no-card':''}}">
+          <view class="cu-item shadow">
+              <view class="image">
+                   <video src="{{item.videoPath}}" enable-danmu danmu-btn controls objectFit='cover'></video>
+                  <view class="cu-tag bg-blue">视频自制</view>
+                  </view>
+                  <view class="cu-list menu-avatar"  bindtap='navVideo' id='{{index}}'>
+                        <view class="cu-item">
+                               <view class="cu-avatar round lg" >
+                                  <image src='{{item.videoAuthorPhoto}}' class='im'></image>
+                               </view>
+                               <view class="content flex-sub">
+                                    <view class="text-grey">{{item.videoAuthorname}}</view>
+                                    <view class="text-gray text-sm flex justify-between">
+                                          {{item.videoTime}}
+                                    </view>
+                               </view>
+                         </view>
+                  </view>
+            </view>
+      </view>
+</view>
+
+			
+			<view class='padding margin text-center'>
+			   	<view class='cu-btn bg-green lg block shadow radius margin-xl' 
+                bindtap="showModal" data-target="viewModal">
+					      点击跳转文章列表
+				  </view>
+			</view>
+</scroll-view>
+
+
+
+	  	<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+			      <text class="cuIcon-pullright"></text>
+		  </view>
+
+
+		  <scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+          <view class="cu-bar bg-white solid-bottom margin-top">
+             <view class='action'>
+                 <text class='cuIcon-titles text-orange '></text> 
+                  文章页面
+              </view>
+               <view class='action'>
+                  <switch class='sm' checked='{{isCard}}' bindchange='isCard'></switch>
+                </view>
+           </view>
+			     <view wx:for='{{listArtical}}'>
+               <view class="cu-card article {{isCard?'no-card':''}}" bindtap='nav' id='{{index}}'>
+                    <view class="cu-item shadow">
+                        <view class="title">
+                               <view class="text-cut">{{item.articalTitle}}</view>
+                        </view>
+                        <view class="content">
+                               <image src="{{item.articalImage}}" mode="aspectFill"></image>
+                        <view class="desc">
+                        <view class="text-content"> 
+                               {{item.articalContent}}
+                        </view>
+                     <view>
+                     <view class="cu-tag bg-red light sm round" style='font-size:10px'>
+                          {{item.articalTime}}
+                     </view>
+                     <view class="cu-tag bg-green light sm round" style='font-size:12px'>
+                          {{item.articalAuthor}}
+                     </view>
+                 </view>
+             </view>
+        </view>
+       </view>
+       </view>
+       </view>  
+     
+		   </scroll-view>
+
+

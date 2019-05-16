@@ -1,0 +1,64 @@
+
+   <view class="header">
+       <view class="user" hoverClass="none">
+          <view class="user_box">
+               <view catchtap="previewImage" class="logo">
+                     <image src="{{userInfo.userPhoto}}"></image>
+               </view>
+                <block>
+                     <view class="user_info">
+                           <view class="user_name">
+                                <text>{{userInfo.username}}</text>
+                            </view>
+                     </view>
+                 </block>
+          </view>
+      </view>
+      <image src='https://edu.qinhui88.com/assets/wx/image/wave.gif' mode='scaleToFill' class='gif-wave'></image>
+   </view>
+
+   <!-- 功能列表 -->
+   <view class="nav">
+       <navigator url='/pages/user-artical/user-artical?username={{userInfo.username}}'>
+       <view  class="item" hoverClass="none">
+          <view class='wallet'>
+              <text class='icon-news icon'></text>
+              <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+              <text>他的文章</text>
+          </view>
+          <view class="icon">
+              <text class='icon-right'></text>
+          </view>
+       </view>
+       </navigator>
+
+       <navigator url='/pages/user-video/user-video?username={{userInfo.username}}'>
+       <view  class="item"  hoverClass="none">
+          <view class='wallet'>
+               <text class='icon-favor icon'></text>
+               <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+               <text>他的视频</text>
+          </view>
+          <view class="icon">
+               <text class='icon-right'></text>
+           </view>
+        </view>
+        </navigator>
+
+        
+        <navigator url='/pages/user-watch-people/user-watch-people?username={{userInfo.username}}'>
+        <view  class="item" hoverClass="none">
+          <view class='wallet'>
+               <text class='icon-favor icon'></text>
+               <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+               <text>他的关注</text>
+          </view>
+          <view class="icon">
+               <text class='icon-right'></text>
+           </view>
+        </view>
+        </navigator>
+
+  </view>
+
+

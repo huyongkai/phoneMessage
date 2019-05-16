@@ -1,0 +1,22 @@
+<view wx:for="{{ets}}" >
+    <view class='item'>
+         <view class='item-photo' bindtap='nav' id='{{index}}'>
+             <image src='{{item.userPhoto}}'></image>
+         </view>
+         <view class="content">
+               <view class='user'>{{item.username}}</view>
+               <button  class="{{item.watchPeople?'watch':'nowatch'}}" bindtap='watchPeople' id='{{index}}'>
+                     {{item.watchConnect}}
+               </button>
+         </view>
+    </view>
+    <view class='blur'></view>
+</view>
+
+
+
+
+
+
+
+

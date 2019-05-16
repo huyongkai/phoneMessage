@@ -1,0 +1,32 @@
+    <view class="cu-bar bg-white solid-bottom margin-top">
+       <view class="action">
+          <text class="cuIcon-title text-orange "></text>消息列表
+       </view>
+    </view>
+    <view class="cu-list menu-avatar">
+        <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{showAllChat}}" wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" data-target="move-box-{{index}}">
+        
+             <view class="cu-avatar round lg">
+                 <image src='{{item.chatPhoto}}' class='img'></image>
+                 <view class="cu-tag badge" wx:if='{{boolNum===true&&item.chatLastNum!==0}}'>{{item.chatLastNum}}</view>
+             </view>
+             <view class="content" bindtap='nav' id='{{index}}'>
+                 <view class="text-green">{{item.chatName}}</view>
+                 <view class="text-gray text-sm" wx:if='{{item.chatLastNum===0}}'>
+                        {{item.chatLastContent}}
+                 </view>
+                 <view class="text-gray text-sm" wx:else>
+                        {{item.chatLastContent}}
+                 </view>
+             </view>
+             <view class="action" bindtap='nav' id='{{index}}'>
+                  <view class="text-grey text-xs">{{item.chatLastTime}}</view>
+                  <view class="cu-tag sm" wx:if='{{item.chatLastNum===0}}'></view>
+                  <view class="cu-tag round bg-grey sm" wx:else>{{item.chatLastNum}}</view>
+             </view>
+             <view class="move">
+                   <view class="bg-red" bindtap='deleteChat' id='{{index}}'>删除</view>
+             </view>
+         </view>
+       
+    </view>

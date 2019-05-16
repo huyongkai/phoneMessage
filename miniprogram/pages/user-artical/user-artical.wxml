@@ -1,0 +1,54 @@
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> 文章卡片
+  </view>
+  <view class='action'>
+    <switch class='sm' checked='{{isCard}}' bindchange='isCard'></switch>
+  </view>
+</view>
+
+
+<view wx:for="{{showListArtical}}">
+<view class="cu-card case {{isCard?'no-card':''}}" bindtap='nav' id='{{index}}'>
+  <view class="cu-item shadow">
+    <view class="image">
+       <image src="{{item.articalImage}}" mode="widthFix"></image>
+       <view class="cu-tag bg-blue">自制</view>
+       <view class="cu-bar bg-shadeBottom">
+           <text class="text-cut">
+              <text style='color:#52f008;font-size:18px;'>标题：</text>{{item.articalTitle}}
+          </text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+          <view class="cu-avatar round lg" class='im'>
+             <image src='{{item.articalAuthorPhoto}}'></image>
+          </view>
+          <view class="content flex-sub" style='color:black'>
+             <view class="text-green">{{item.articalAuthor}}</view>
+             <view class="text-orange text-sm flex justify-between">
+                 {{item.articalTime}}
+             </view>
+          </view>
+       </view>
+     </view>
+  </view>
+</view>
+</view>
+
+
+
+
+
+
+
+
+
+<view class='addArtical'>
+    <navigator url='/pages/user-artical-add/user-artical-add'>
+       <image src='/images/add.png'></image>
+    </navigator>
+</view>
+
+

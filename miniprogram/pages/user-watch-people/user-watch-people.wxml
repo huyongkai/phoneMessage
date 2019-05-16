@@ -1,0 +1,27 @@
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+    <view class="cu-bar bg-white solid-bottom margin-top">
+        <view class="action">
+            <text class="cuIcon-title text-orange "></text>关注人列表
+        </view>
+    </view>
+
+    <view class="cu-list menu-avatar">
+      <view class="cu-item {{modalName=='move-box-'+ index?'move-cur':''}}" wx:for="{{ets}}" 
+              wx:key bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" 
+              bindtouchend="ListTouchEnd" data-target="move-box-{{index}}" bindtap='nav' id='{{index}}'>
+   
+         <view class="cu-avatar round lg">
+         <image src='{{item.userPhoto}}' class='im'></image>
+         </view>
+         <view class="content">
+         <view class="text-grey">{{item.username}}</view>
+         <view class="text-gray text-sm">
+                <text class="cuIcon-infofill text-green"></text>已关注</view>
+         </view>
+         <view class="move">
+                <view class="bg-grey">置顶</view>
+         </view>
+ 
+     </view>
+   </view>
+</scroll-view>

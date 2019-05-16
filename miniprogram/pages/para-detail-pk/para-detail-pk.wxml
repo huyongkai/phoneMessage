@@ -1,0 +1,171 @@
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">请选择CPU类型</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{cpuList}}" wx:key wx:if="{{index<17}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='chooseCpu' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">手机尺寸选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{screenSizeList}}" wx:key wx:if="{{index<8}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='choosescreenSize' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">手机屏幕选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{screenList}}" wx:key wx:if="{{index<8}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='choosescreen' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">前置摄像选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{prePhoto}}" wx:key wx:if="{{index<7}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='chooseprePhoto' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">手机后置摄像选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{postPhoto}}" wx:key wx:if="{{index<7}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='choosepostPhoto' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">手机解锁方式选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{unLockList}}" wx:key wx:if="{{index<7}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='chooseunLockList' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">手机运行内存选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{phoneMemory}}" wx:key wx:if="{{index<7}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='choosephoneMemory' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue">手机存储容量选择</text>
+  </view>
+</view>
+<view class="grid col-3 bg-white padding-sm">
+  <view class="padding-sm" wx:for="{{phoneRunningMemory}}" wx:key wx:if="{{index<7}}">
+    <view class="bg-{{item.name}} padding radius text-center light" bindtap='choosephoneRunningMemory' id='{{index}}'>
+      <view class="text-lg">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <view class="padding flex flex-wrap justify-between align-center bg-white">
+    </view>
+  </view>
+</view>
+<view class="padding flex flex-direction">
+  <button class="cu-btn bg-blue margin-tb-sm lg" bindtap='showNum'>获得输入手机信息的最后评测分数</button>
+</view>
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <view class="padding flex flex-wrap justify-between align-center bg-white">
+       <text class="cuIcon-title text-blue">手机参数进行PK</text>
+    </view>
+  </view>
+</view>
+
+<view class="grid col-2 padding-sm">
+  <view class="padding-sm">
+    <view class="bg-gradual-blue padding radius text-center shadow-blur">
+      <view class="text-lg">{{oldPhoneName}}</view>
+      <view class="margin-top-sm text-Abc">{{oldsum}}分</view>
+    </view>
+  </view>
+ 
+  <view class="padding-sm">
+    <view class="bg-gradual-blue padding radius text-center shadow-blur">
+      <view class="text-lg">输入手机得分</view>
+      <view class="margin-top-sm text-Abc">{{newsum}}分</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>PK结果比例展示
+  </view>
+</view>
+<view class="padding bg-white">
+  <view class="cu-progress radius striped active">
+    <view class="bg-olive" style="width:{{oldProportion}}%;"></view>
+    <view class="bg-cyan" style="width:{{newProportion}}%;"></view>
+  </view>
+</view>

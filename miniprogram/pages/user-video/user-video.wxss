@@ -1,0 +1,62 @@
+.list-item{
+margin-bottom: 10px;
+}
+.list-item-text{
+   margin-top: 20rpx;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.list-item-text-title{
+  font-size: 24px;
+  color: rgb(241, 75, 75);
+}
+.list-item-text-content{
+  font-size: 16px;
+  text-indent:2em; 
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.addVideo{
+  height: 50px;
+  width: 50px;
+  float: right;
+  background-color: #ffffff;
+  position: fixed; 
+  bottom: 20px; 
+  right: 10px; 
+  border: 0 solid #ffffff; 
+  border-radius: 500px; 
+  box-shadow: 4px 1px 1px #cccccc;
+}
+.addVideo image{
+  height: 50px;
+  width: 50px;
+}
+
+.new{
+  height: 50px;
+  width: 50px;
+  float: left;
+  background-color: #ffffff;
+  position: fixed; 
+  bottom: 20px; 
+  left: 10px; 
+  border: 0 solid #ffffff; 
+  border-radius: 500px; 
+  box-shadow: 4px 1px 1px #cccccc;
+}
+.new image{
+  height: 50px;
+  width: 50px;
+}

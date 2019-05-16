@@ -1,0 +1,87 @@
+<view class='artical-title'>
+   <text>{{articalTitle}}</text>
+</view>
+
+
+
+<view class='author'>
+    <view class='artical-autor'>
+        <text>{{articalAuthor}}</text>
+    </view>
+    <view class='articalAuthorPhoto'>
+        <image src='{{articalAuthorPhoto}}'></image>
+    </view>
+</view>
+
+
+
+
+<view class='artical-content'>
+   {{articalContent}}
+</view>
+
+
+
+
+
+<view class='artical-talke-list'>
+   <view class='artical-talke-list-title'>
+       <text>评论列表:</text>
+   </view>
+   <view wx:for="{{ListParaItem}}">
+      <view class='artical-talke-list-item'>
+            <view class='artical-talke-list-item-photo'>
+                <image src='{{item.userPhoto}}'></image>
+            </view>
+            <view class='artical-talke-list-item-username'>
+                <text>{{item.username}}</text>
+            </view>
+            <view class='artical-talke-list-item-time'>
+                <text>{{item. articalTime}}发表</text>
+            </view>
+            <view class='artical-talke-list-item-content'>
+                <view wx:for="{{item.articalReplayList}}" wx:for-item="replayItem" wx:for-index="replayIndex" class='artical-talke-list-item-content-articalReplayList'>
+
+                   <view class='replayAuthor'>回复{{replayItem.articalReplayToUser}}:</view>
+                   <view class='replayContentLou'>{{replayIndex+1}}楼</view>
+                   <view class='replayContent'>{{replayItem.articalReplayTocontent}}</view>
+                  
+                </view>
+                <view class='replayTalke'>{{item. articalTalke}}</view>
+            </view>
+            <view class='artical-talke-list-item-function'>
+                <view class='artical-talke-list-item-function-icon'>
+                    <image src='{{item.loveTalke}}' bindtap='changeImg' data-id="{{index}}"></image>
+                </view>
+                 <view class='artical-talke-list-item-function-num'>
+                     <text>{{item.articalTalkeLoveNum}}</text>
+                </view>
+                <view class='artical-talke-list-item-function-replay' >
+                      <text  bindtap='replayShow' data-id="{{index}}">回复</text>
+                </view>
+            </view>
+            <view hidden="{{item.hiddenName}}"  class='artical-talke-list-item-replay'>
+                  <text class='artical-talke-list-item-replay-atPeople'> 回复@{{item.username}}</text>
+                  <textarea bindinput='inputArticalReplayTalke'>
+                  </textarea>
+                  <button class='artical-talke-list-item-replay-save' bindtap='saveArticalTalkeReplay' size='mini' data-id="{{index}}">回复</button>
+            </view>
+      </view>
+   </view>
+</view>
+
+
+
+
+
+<view class='comment'>
+
+   <textarea class='comment-text' placeholder='请写下你的评论'  minlength="{{min}}" 
+             maxlength='{{max}}'   bindinput='inputArticalTalke'>
+            <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+            <text class="hint">{{texts}}</text>
+    </textarea>
+
+    <button class='comment-save' bindtap='saveArticalTalke' size='mini'>发布</button>
+
+</view>

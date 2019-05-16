@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/para/para",
+    "pages/para-search/para-search",
+     
+ 
+    "pages/message/message",
+    "pages/Test/Test",
+    "pages/talke/talke",
+  
+    "pages/user-artical/user-artical",
+    "pages/user-people/user-people",
+    "pages/user-watch-people/user-watch-people",
+    "pages/login-to-index/login-to-index",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/user-people-detail/user-people-detail",
+    "pages/para-detail/para-detail",
+    "pages/para-add/para-add",
+    "pages/talke-video_details/talke-video_details",
+    "pages/talke-artical/talke-artical",
+    "pages/user-artical-add/user-artical-add",
+    "pages/user/user",
+    "pages/resgister/resgister",
+    "pages/user-video-add/user-video-add",
+    "components/bubble/bubble",
+    "pages/para-detail-pk/para-detail-pk"
+   
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/souye.png",
+        "selectedIconPath": "/images/souye1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/talke/talke",
+        "iconPath": "/images/talke.png",
+        "selectedIconPath": "/images/talke1.png",
+        "text": "评测"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "/images/message1.png",
+        "selectedIconPath": "/images/message.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/para/para",
+        "iconPath": "/images/para1.png",
+        "selectedIconPath": "/images/para.png",
+        "text": "参数"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/images/user_1.png",
+        "selectedIconPath": "/images/user_2.png",
+        "text": "我的"
+      }
+    ],
+    "selectedColor": "#0099FF"
+  }
+}

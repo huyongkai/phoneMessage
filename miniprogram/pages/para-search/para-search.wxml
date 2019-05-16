@@ -1,0 +1,101 @@
+<view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索手机参数、文章、视频" bindinput='inputValue' value='{{message}}'></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round" bindtap='search'>搜索</button>
+    </view>
+</view>
+
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> 手机卡片
+  </view>
+  <view class='action'>
+    <switch class='sm' checked='{{isCard}}' bindchange='isCard'></switch>
+  </view>
+</view>
+<view class="cu-card article {{isCard?'no-card':''}}" wx:for="{{phoneList}}">
+  <view class="cu-item shadow"  bindtap='navPhone' id='{{index}}'>
+    <view class="title">
+      <view class="text-cut">{{item.phoneType}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.phonefileID}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view>
+          <view class="cu-tag bg-green light sm round">{{item.phoneBrand}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.itemCPUModel}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.itemScreentype}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.itemMobilePhoneUnlock}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.phoneMemory}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.phoneRunningMemory}}</view>
+          <view class='price'>{{item.phonePrice}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> 文章卡片
+  </view>
+  <view class='action'>
+    <switch class='sm' checked='{{isCard}}' bindchange='isCard'></switch>
+  </view>
+</view>
+<view class="cu-card article {{isCard?'no-card':''}}" wx:for="{{articalList}}">
+  <view class="cu-item shadow"  bindtap='navArtical' id='{{index}}'>
+    <view class="title">
+      <view class="text-cut">{{item.articalTitle}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.articalImage}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content">{{item.articalContent}}</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">{{item.articalAuthor}}</view>
+          <view class="cu-tag bg-green light sm round">{{item.articalTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> 视频卡片
+  </view>
+  <view class='action'>
+    <switch class='sm' checked='{{isCard}}' bindchange='isCard'></switch>
+  </view>
+</view>
+<view class='list-item' wx:for='{{videoList}}'>
+     <view class="cu-card case {{isCard?'no-card':''}}">
+          <view class="cu-item shadow">
+              <view class="image">
+                  <video src="{{item.videoPath}}" enable-danmu danmu-btn controls objectFit='cover'></video>
+                  <view class="cu-tag bg-blue">视频自制</view>
+                  </view>
+                  <view class="cu-list menu-avatar"  bindtap='navVideo' id='{{index}}'>
+                        <view class="cu-item">
+                               <view class="cu-avatar round lg" >
+                                  <image src='{{item.videoAuthorPhoto}}' class='im'></image>
+                               </view>
+                               <view class="content flex-sub">
+                                    <view class="text-grey">{{item.videoAuthorname}}</view>
+                                    <view class="text-gray text-sm flex justify-between">
+                                          {{item.videoTime}}
+                                    </view>
+                               </view>
+                         </view>
+                  </view>
+            </view>
+      </view>
+</view>
